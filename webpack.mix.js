@@ -11,5 +11,7 @@ const mix = require('laravel-mix');
  |
  */
 
+// mix.js('resources/js/app.js', 'public/js')
+//     .sass('resources/sass/app.scss', 'public/css');
 mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+    .sass('resources/sass/app.scss', 'public/css').version();    // version()，每次静态文件发生更改就生成新的文件名称，防止浏览器缓存
