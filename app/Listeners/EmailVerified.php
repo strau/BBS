@@ -6,6 +6,9 @@ use Illuminate\Auth\Events\Verified;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
+/**
+ * 邮箱验证成功
+ */
 class EmailVerified
 {
     /**

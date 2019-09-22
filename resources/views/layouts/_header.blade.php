@@ -23,12 +23,12 @@
                 @else
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="http://b-ssl.duitang.com/uploads/item/201412/24/20141224115658_2FvcF.jpeg" width="30px" height="30px">
+                            <img src="{{ $user->avatar }}" width="30px" height="30px">
                             {{ Auth::user()->name }}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="">个人中心</a>
-                            <a class="dropdown-item" href="">编辑资料</a>
+                            <a class="dropdown-item" href="{{ route('users.show', Auth::id()) }}">个人中心</a>
+                            <a class="dropdown-item" href="{{ route('users.edit', Auth::id()) }}">编辑资料</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" id="logout" href="#">
                                 <form action="{{ route('logout') }}" method="POST">

@@ -4,6 +4,10 @@ namespace App\Http\Middleware;
 
 use Closure;
 
+/**
+ * 检查用户是否已经认证过邮箱
+ * 认证过邮箱才允许通过
+ */
 class EnsureEmailIsVerified
 {
     /**
