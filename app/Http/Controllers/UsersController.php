@@ -61,7 +61,7 @@ class UsersController extends Controller
      */
     public function update(UserRequest $request,ImageUploadHandler $uploader, User $user)
     {
-        $this->authorize('update', $user);
+        $this->authorize('update', $user);    // 授权，此处的update为绑定的policy类中的授权方法名称，$user为授权方法的第二个参数
         $data = $request->all();
         if ($request->avatar) {
             $result = $uploader->save($request->avatar, 'avatars', $user->id);
