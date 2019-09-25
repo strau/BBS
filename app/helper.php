@@ -60,3 +60,41 @@ if (! function_exists('routeClass')) {
         return str_replace('.', '-', \Illuminate\Support\Facades\Route::currentRouteName());
     }
 }
+
+if (! function_exists('activeClass')) {
+    /**
+     * 根据路由名称和参数判断是否添加选中状态的class
+     *
+     * @return string
+     * User: KANG
+     * Date: 2019/9/19
+     * Time: 17:34
+     */
+    function activeClass($route = null, $params = [], $class = 'active')
+    {
+        $r = $p = false;
+        if ($route) {
+            $r = \Illuminate\Support\Facades\Route::currentRouteName() === $route;
+        } else {
+            $r = true;
+        }
+        if (count($params) > 0) {
+            foreach ($params as $key => $value) {
+                $param = request()->$key;
+                \Illuminate\Support\Facades\Log::info("active", [$param]);
+                if (is_object($param)) {
+                    $primary_key_name = $param->getKeyName();
+                    $p = $param->$primary_key_name == $value;
+                } else {
+                    $p = $param == $value;
+                }
+            }
+        } else {
+            $p = true;
+        }
+        if ($r === true && $p === true) {
+            return $class;
+        }
+        return '';
+    }
+}

@@ -15,8 +15,12 @@
 
                 <div class="card-header bg-transparent">
                     <ul class="nav nav-pills">
-                        <li class="nav-item"><a class="nav-link active" href="#">最后回复</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">最新发布</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ activeClass(null, ['order' => 'default']) }} " href="{{ url()->current() }}?order=default">最后回复</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ activeClass(null, ['order' => 'recent']) }} " href="{{ url()->current() }}?order=recent">最新发布</a>
+                        </li>
                     </ul>
                 </div>
 

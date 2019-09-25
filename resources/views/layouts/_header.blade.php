@@ -14,20 +14,16 @@
                 <li class="nav-item @if(\Illuminate\Support\Facades\Route::currentRouteName() === 'topics.index') active @endif">
                     <a class="nav-link" href="{{ route('topics.index') }}">话题</a>
                 </li>
-                <li class="nav-item
-                    @if(\Illuminate\Support\Facades\Route::currentRouteName() === 'categories.show' && request()->category->id == 1) active @endif">
+                <li class="nav-item {{ activeClass('categories.show', ['category' => 1]) }} ">
                     <a class="nav-link" href="{{ route('categories.show', 1) }}">分享</a>
                 </li>
-                <li class="nav-item
-                    @if(\Illuminate\Support\Facades\Route::currentRouteName() === 'categories.show' && request()->category->id == 2) active @endif">
+                <li class="nav-item {{ activeClass('categories.show', ['category' => 2]) }} ">
                     <a class="nav-link" href="{{ route('categories.show', 2) }}">教程</a>
                 </li>
-                <li class="nav-item
-                    @if(\Illuminate\Support\Facades\Route::currentRouteName() === 'categories.show' && request()->category->id == 3) active @endif">
+                <li class="nav-item {{ activeClass('categories.show', ['category' => 3]) }} ">
                     <a class="nav-link" href="{{ route('categories.show', 3) }}">问答</a>
                 </li>
-                <li class="nav-item
-                    @if(\Illuminate\Support\Facades\Route::currentRouteName() === 'categories.show' && request()->category->id == 4) active @endif">
+                <li class="nav-item {{ activeClass('categories.show', ['category' => 4]) }} ">
                     <a class="nav-link" href="{{ route('categories.show', 4) }}">公告</a>
                 </li>
             </ul>
