@@ -37,8 +37,15 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
+    // 关联用户发布的话题
     public function topics()
     {
         return $this->hasMany(Topic::class);
+    }
+
+    // 是否是作者
+    public function isAuthorOf($model)
+    {
+        return $this->id === $model->user_id;
     }
 }
