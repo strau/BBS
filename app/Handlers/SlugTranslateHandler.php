@@ -4,6 +4,7 @@ namespace App\Handlers;
 
 
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Log;
 use Overtrue\Pinyin\Pinyin;
 
 class SlugTranslateHandler
@@ -18,7 +19,6 @@ class SlugTranslateHandler
         $appid = config('baiduApi.translate.appid');
         $key = config('baiduApi.translate.key');
         $salt = time();
-
         // 如果没有配置百度翻译，自动使用兼容的拼音方案
         if (empty($appid) || empty($key)) {
             return $this->pinyin($text);

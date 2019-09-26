@@ -81,7 +81,6 @@ if (! function_exists('activeClass')) {
         if (count($params) > 0) {
             foreach ($params as $key => $value) {
                 $param = request()->$key;
-                \Illuminate\Support\Facades\Log::info("active", [$param]);
                 if (is_object($param)) {
                     $primary_key_name = $param->getKeyName();
                     $p = $param->$primary_key_name == $value;
