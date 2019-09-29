@@ -47,7 +47,14 @@ class UsersTableSeeder extends Seeder
         $user = User::find(1);
         $user->name = 'sunny';
         $user->email = 'sunny@qq.com';
-        $user->avatar = 'https://cdn.learnku.com/uploads/images/201710/14/1/ZqM7iaP4CR.png';
+        $user->avatar = 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1569757137349&di=67f94828a67e5cb48eb15bec7d4715cc&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Fdc810f624ec50dfa211d30b40f00aed0af04691ab636-YSbVzD_fw658';
         $user->save();
+
+        // 初始化用户角色，将 1 号用户指派为『站长』
+        $user->assignRole('Founder');
+
+        // 将 2 号用户指派为『管理员』
+        $user = User::find(2);
+        $user->assignRole('Maintainer');
     }
 }
