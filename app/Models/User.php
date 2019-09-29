@@ -6,10 +6,11 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Auth;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use \Illuminate\Auth\MustVerifyEmail;
+    use \Illuminate\Auth\MustVerifyEmail, HasRoles;
     use Notifiable {
         // 修改notify方法名称
         notify as protected laravelNotify;
