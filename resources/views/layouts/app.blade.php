@@ -7,8 +7,9 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title', 'BBS')</title>
-    <meta name="description" content="@yield('description', 'laravel BBS')" />
+    <title>@yield('title', 'BBS') - {{ setting('site_name', '五花肉') }}</title>
+    <meta name="keyword" content="@yield('keyword', setting('seo_keyword', '红烧五花肉，个人博客'))" />
+    <meta name="description" content="@yield('description', setting('seo_description', '个人博客，记录成长。'))" />
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     @yield('styles')
