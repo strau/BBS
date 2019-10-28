@@ -10,6 +10,15 @@
     <title>@yield('title', 'BBS') - {{ setting('site_name', '五花肉') }}</title>
     <meta name="keyword" content="@yield('keyword', setting('seo_keyword', '红烧五花肉，个人博客'))" />
     <meta name="description" content="@yield('description', setting('seo_description', '个人博客，记录成长。'))" />
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?e4e1345d1af0c7446d8f36b59cc9fecb";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     @yield('styles')
